@@ -10,14 +10,14 @@ include $(TOPDIR)/rules.mk
 
 ARCH:=riscv64
 BOARD:=siliconwaves
-BOARDNAME:=SiliconWaves risc-v
-SUBTARGETS:=fu740 wave3000
-CPU_TYPE:=riscv64
+BOARDNAME:=SiliconWaves V1
+SUBTARGETS:=fu740
+CPU_TYPE:=u74
 FEATURES:=dt-overlay emmc gpio pci pcie rootfs-part separate_ramdisk squashfs usb
 
 KERNEL_PATCHVER:=5.15
-
+KERNELNAME:= Image.gz
 include $(INCLUDE_DIR)/target.mk
-DEFAULT_PACKAGES +=
+DEFAULT_PACKAGES += uboot-envtools mkf2fs e2fsprogs blkid
 
 $(eval $(call BuildTarget))

@@ -6,13 +6,6 @@
 #
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/image.mk
-
-define Image/Prepare
-	cp $(KDIR)/vmlinux.elf $(BIN_DIR)/$(IMG_PREFIX)-vmlinux.elf
-endef
-
-define Image/Build
-	cp $(KDIR)/root.$(1) $(BIN_DIR)/$(IMG_PREFIX)-$(1).img
-endef
+include $(SUBTARGET).mk
 
 $(eval $(call BuildImage))
