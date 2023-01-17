@@ -13,7 +13,7 @@ BOARD:=siliconwaves
 BOARDNAME:=SiliconWaves V1
 SUBTARGETS:=fu740
 CPU_TYPE:=u74
-FEATURES:=dt-overlay emmc gpio pci pcie rootfs-part separate_ramdisk squashfs usb
+FEATURES:=boot-part ext4 rootfs-part squashfs rtc gpio usb
 
 KERNEL_PATCHVER:=5.15
 KERNELNAME:= Image.gz
