@@ -34,9 +34,9 @@ define Build/Compile
 endef
 
 define Build/InstallDev
-	$(INSTALL_DIR) -p $(STAGING_DIR_IMAGE)/opensbi
+	$(INSTALL_DIR) -p $(STAGING_DIR_IMAGE)
 	$(CP) $(PKG_BUILD_DIR)/build/platform/generic/firmware/fw_payload.bin  \
-	       $(STAGING_DIR_IMAGE)/opensbi	
+	       $(STAGING_DIR_IMAGE)/
 
 endef
 

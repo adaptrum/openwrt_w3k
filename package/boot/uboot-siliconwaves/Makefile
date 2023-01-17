@@ -11,8 +11,7 @@ include $(INCLUDE_DIR)/kernel.mk
 PKG_VERSION:=2023.01
 PKG_RELEASE:=$(AUTORELEASE)
 PKG_HASH:=69423bad380f89a0916636e89e6dcbd2e4512d584308d922d1039d1e4331950f
-
-OPENSBI:=$(STAGING_DIR_IMAGE)/opensbi/fw_payload.bin
+OPENSBI:=$(STAGING_DIR_IMAGE)/fw_payload.bin
 
 include $(INCLUDE_DIR)/u-boot.mk
 include $(INCLUDE_DIR)/package.mk
@@ -20,7 +19,7 @@ include $(INCLUDE_DIR)/package.mk
 define U-Boot/Default
   BUILD_TARGET:=siliconwaves
   BUILD_SUBTARGET:=generic
-  UBOOT_IMAGE:=u-boot.img
+  UBOOT_IMAGE:=u-boot.itb spl/u-boot-spl.bin
 endef
 
 define U-Boot/sifive_unmatched
