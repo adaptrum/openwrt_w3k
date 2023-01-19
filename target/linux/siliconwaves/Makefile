@@ -13,11 +13,17 @@ BOARD:=siliconwaves
 BOARDNAME:=SiliconWaves V1
 SUBTARGETS:=fu740
 CPU_TYPE:=u74
-FEATURES:=boot-part ext4 rootfs-part squashfs rtc gpio usb
+FEATURES:=boot-part ext4 rootfs-part rtc gpio usb
 
 KERNEL_PATCHVER:=5.15
-KERNELNAME:= Image.gz
+
+define Target/Description
+        Build firmware image for SilionWaves fu740 SoC devices.
+        Currently produces SD Card image for siliconwaves test.
+endef
+
+KERNELNAME:= Image dtbs
 include $(INCLUDE_DIR)/target.mk
-DEFAULT_PACKAGES += uboot-envtools mkf2fs e2fsprogs blkid
+DEFAULT_PACKAGES += mkf2fs e2fsprogs blkid
 
 $(eval $(call BuildTarget))
