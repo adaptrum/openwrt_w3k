@@ -1,0 +1,7 @@
+--- a/configs/sifive_unmatched_defconfig
++++ b/configs/sifive_unmatched_defconfig
+@@ -63,3 +63,4 @@ CONFIG_USB=y
+ CONFIG_USB_XHCI_HCD=y
+ CONFIG_USB_XHCI_PCI=y
+ CONFIG_BOARD_EARLY_INIT_F=y
++CONFIG_SYS_SPL_MALLOC_SIZE=0x400000
