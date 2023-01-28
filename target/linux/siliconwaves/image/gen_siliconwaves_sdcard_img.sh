@@ -33,8 +33,8 @@ dd if=/dev/zero of=$OUTPUT bs=512 count=$TOTAL_SECTORS
 sgdisk -g --clear --set-alignment=1 \
 	--new=1:${UBOOTSPLOFFSET}:+${UBOOTSPLSIZE}M: --change-name=1:'u-boot-spl' --typecode=1:5b193300-fc78-40cd-8002-e86c45580b47 \
 	--new=2:${UBOOTITBOFFSET}:+${UBOOTITBSIZE}M: --change-name=2:'uboot-itb' --typecode=2:2e54b353-1271-4842-806f-e436d6af6985 \
-	--new=3:${BOOTFSOFFSET}:+${BOOTFSSIZE}M: --change-name=3:'boot' \
-	--new=4:${ROOTFSOFFSET}:-0 --change-name=4:'rootfs' --attributes=4:set:2 \
+	--new=3:${BOOTFSOFFSET}:+${BOOTFSSIZE}M: --change-name=3:'boot' --typecode=3:ebd0a0a2-b9e5-4433-87c0-68b6b72699c7 \
+	--new=4:${ROOTFSOFFSET}:-0 --change-name=4:'rootfs' --attributes=3:set:2 \
         $OUTPUT
 
 dd bs=512 if="$UBOOTSPL" of="$OUTPUT" seek="$UBOOTSPLOFFSET" conv=notrunc
