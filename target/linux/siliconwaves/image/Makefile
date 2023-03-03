@@ -39,7 +39,7 @@ endef
 ### Devices ###
 define Device/Default
   DEVICE_VENDOR := SiliconWaves
-  KERNEL := kernel-bin
+  KERNEL := kernel-bin | gzip
   KERNEL_IMG := kernel.img
   IMAGES := factory.img.gz sysupgrade.img.gz
   IMAGE/sysupgrade.img.gz := boot-common | sdcard-img | gzip | append-metadata
@@ -49,7 +49,7 @@ endef
 define Device/hifive-unmatched-a00
   DEVICE_MODEL := unmatched
   DEVICE_VARIANT := (64bit)
-  KERNEL_IMG := kernel.img
+  KERNEL_IMG := hifive-unmatched-a00-kernel.bin
   DEVICE_DTS := \
         sifive/hifive-unmatched-a00
   IMAGE/sysupgrade.img.gz := boot-common |  sdcard-img-unmatched | gzip | append-metadata
