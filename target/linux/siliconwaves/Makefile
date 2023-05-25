@@ -24,6 +24,6 @@ endef
 
 KERNELNAME:= Image dtbs
 include $(INCLUDE_DIR)/target.mk
-DEFAULT_PACKAGES += mkf2fs e2fsprogs blkid
+DEFAULT_PACKAGES += mkf2fs e2fsprogs blkid kmod-igb perf
 
 $(eval $(call BuildTarget))
