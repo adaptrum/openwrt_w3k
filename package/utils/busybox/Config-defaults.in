@@ -2807,7 +2807,7 @@ config BUSYBOX_DEFAULT_LSOF
 	default n
 config BUSYBOX_DEFAULT_MPSTAT
 	bool
-	default n
+	default y
 config BUSYBOX_DEFAULT_NMETER
 	bool
 	default n
