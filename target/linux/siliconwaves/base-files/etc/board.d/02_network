@@ -7,6 +7,7 @@
 riscv64_setup_interfaces()
 {
 	ucidef_set_interface_wan "eth0"
+	ucidef_set_interface_lan "eth1 eth2"
 }
 
 board_config_update
