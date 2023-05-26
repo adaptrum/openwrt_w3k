@@ -795,6 +795,24 @@ endef
 $(eval $(call KernelPackage,igb))
 
 
+define KernelPackage/macb
+  SUBMENU:=$(NETWORK_DEVICES_MENU)
+  TITLE:=vendor cadence
+  DEPENDS:=@PCI_SUPPORT +kmod-ptp +kmod-hwmon-core +kmod-phylink
+  KCONFIG:=CONFIG_NET_VENDOR_CADENCE \
+    CONFIG_MACB=y \
+    CONFIG_MACB_USE_HWSTAMP=y \
+    CONFIG_MACB_PCI=y 
+  FILES:=$(LINUX_DIR)/drivers/net/ethernet/cadence/macb.ko
+  AUTOLOAD:=$(call AutoLoad,34,macb,1)
+endef
+
+define KernelPackage/macb/description
+ Kernel modedels for cadence macb
+endef
+
+$(eval $(call KernelPackage,macb))
+
 define KernelPackage/igbvf
   SUBMENU:=$(NETWORK_DEVICES_MENU)
   TITLE:=Intel(R) 82576 Virtual Function Ethernet support
