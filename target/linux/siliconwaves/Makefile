@@ -26,6 +26,6 @@ KERNELNAME:= Image dtbs
 include $(INCLUDE_DIR)/target.mk
 DEFAULT_PACKAGES += mkf2fs e2fsprogs blkid kmod-igb perf \
 		    kmod-libphy kmod-e1000e kmod-e1000 kmod-macb \
-		    kmod-shortcut-fe-cm kmod-shortcut-fe
+		    kmod-shortcut-fe-cm kmod-shortcut-fe ethtool-full 
 
 $(eval $(call BuildTarget))
