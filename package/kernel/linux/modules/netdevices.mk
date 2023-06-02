@@ -800,9 +800,7 @@ define KernelPackage/macb
   TITLE:=vendor cadence
   DEPENDS:=@PCI_SUPPORT +kmod-ptp +kmod-hwmon-core +kmod-phylink
   KCONFIG:=CONFIG_NET_VENDOR_CADENCE \
-    CONFIG_MACB=y \
-    CONFIG_MACB_USE_HWSTAMP=y \
-    CONFIG_MACB_PCI=y 
+    CONFIG_MACB=y 
   FILES:=$(LINUX_DIR)/drivers/net/ethernet/cadence/macb.ko
   AUTOLOAD:=$(call AutoLoad,34,macb,1)
 endef
