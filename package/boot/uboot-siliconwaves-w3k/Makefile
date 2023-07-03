@@ -16,7 +16,7 @@ PKG_SOURCE_URL:=git@github.com:adaptrum/sw-u-boot.git
 PKG_SOURCE_VERSION:=29860d410a6806c0176433adc2f73fef3926d630
 PKG_MIRROR_HASH:=419b3465515b904850349eb699b9173419a3f9dea19323c29710409d47826d49
 
-OPENSBI:=$(STAGING_DIR_IMAGE)/fw_payload.bin
+OPENSBI:=$(STAGING_DIR_IMAGE)/fw_dynamic.bin
 
 include $(INCLUDE_DIR)/u-boot.mk
 include $(INCLUDE_DIR)/package.mk
