@@ -10,15 +10,14 @@ include $(TOPDIR)/rules.mk
 
 ARCH:=riscv64
 BOARD:=siliconwaves
-BOARDNAME:=SiliconWaves V1
-SUBTARGETS:=fu740
-CPU_TYPE:=u74
+BOARDNAME:=Siliconwaves RISC-V
+SUBTARGETS:=fu740 w3k
 FEATURES:=boot-part ext4 rootfs-part rtc gpio usb
 
 KERNEL_PATCHVER:=5.15
 
 define Target/Description
-        Build firmware image for SilionWaves fu740 SoC devices.
+        Build firmware image for SilionWaves SoC devices.
         Currently produces SD Card image for siliconwaves test.
 endef
 
