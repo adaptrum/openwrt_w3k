@@ -18,9 +18,9 @@ endef
 define Build/boot-common-w3k
         rm -f $@.boot
         mkfs.fat -n boot -C $@.boot $(FAT32_BLOCKS)
-        mcopy -i $@.boot extlinux-w3k ::
+        mcopy -i $@.boot extlinux-w3k ::extlinux
         mcopy -i $@.boot $(IMAGE_KERNEL) ::$(KERNEL_IMG)
-	mcopy -i $@.boot $(KDIR)/image-$(firstword $(DEVICE_DTS)).dtb ::
+	mcopy -i $@.boot $(KDIR)/image-$(firstword $(DEVICE_DTS)).dtb ::$(firstword $(DEVICE_DTS)).dtb
 endef
 
 define Build/boot-common
@@ -70,7 +70,7 @@ endif
 define Device/siliconwaves-vu13p
   DEVICE_MODEL := vu13p
   DEVICE_VARIANT := (64bit)
-  KERNEL_IMG := siliconwaves-vu13p-a00-kernel.bin
+  KERNEL_IMG := siliconwaves-vu13p-kernel.bin
   DEVICE_DTS := siliconwaves-vu13p
   IMAGE/sysupgrade.img.gz := boot-common-w3k |  sdcard-img-ext4 | gzip | append-metadata
   IMAGE/factory.img.gz := boot-common-w3k |sdcard-img-ext4 |gzip
