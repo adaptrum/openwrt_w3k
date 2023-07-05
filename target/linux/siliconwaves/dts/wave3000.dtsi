@@ -99,7 +99,8 @@
 			reg-shift = <2>;
 			reg-io-width = <4>;
 			reg-offset = <0x100>;
-			interrupts = <18>;
+			interrupts = <7>;
+			baud = <115200>;
 			clock-frequency = <10000000>;
 			status = "disabled";
 		};
