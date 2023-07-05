@@ -1,0 +1,11 @@
+--- a/drivers/tty/serial/serial_core.c
++++ b/drivers/tty/serial/serial_core.c
+@@ -466,7 +466,7 @@ uart_get_divisor(struct uart_port *port,
+ 	if (baud == 38400 && (port->flags & UPF_SPD_MASK) == UPF_SPD_CUST)
+ 		quot = port->custom_divisor;
+ 	else
+-		quot = DIV_ROUND_CLOSEST(port->uartclk, 16 * baud);
++		quot = DIV_ROUND_CLOSEST(port->uartclk, baud);
+ 
+ 	return quot;
+ }
